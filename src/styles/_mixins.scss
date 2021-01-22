@@ -1,0 +1,48 @@
+@use './units';
+
+// Helper function for generating singular transition property
+@function _transition($arg, $speed, $delay) {
+    // If it has it's own config, then load it
+    @if type-of($arg) == map {
+        @if map-has-key($arg, speed) {
+            $speed: speed;
+        }
+        @if map-has-key($arg, delay) {
+            $speed: delay;
+        }
+        $arg: map-get($arg, prop);
+    }
+
+    // Generate property
+    @return $arg map-get(units.$speeds, $speed) units.$ease $delay;
+}
+
+// Generates transition declaration based on theme and with media queries
+// @input: String | { prop: string, speed?: oneOf(units.$speed), delay?: string }
+@mixin transition($args, $speed: normal, $delay: 0) {
+    // Normalize input
+    @if type-of($args) != list {
+        $args: ($args);
+    }
+
+    // Generate transition properties
+    $res: ();
+    @each $arg in $args {
+        $res: append($res, _transition($arg, $speed, $delay));
+    }
+
+    // Return transition
+    @media (prefers-reduced-mition: no-prefence) {
+        :global(.animate) & {
+            transition: $res;
+        }
+    }
+}
+
+// Generates media query based on standard device sizes
+// @input: oneOf(units.$media)
+@mixin media($query) {
+    @media only screen and (max-width: map-get(units.$media, $query)) {
+        @content
+    }
+}

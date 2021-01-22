@@ -1,0 +1,52 @@
+{
+  "name": "@htv/hackhack-the-ui",
+  "version": "1.0.0",
+  "description": "",
+  "peerDependencies": {
+    "babel-plugin-macros": "^3.0.1",
+    "classnames": "^2.2.6",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "sass": "^1.32.4",
+    "svgr.macro": "^1.0.4"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@storybook/addon-actions": "^6.1.15",
+    "@storybook/addon-essentials": "^6.1.15",
+    "@storybook/addon-links": "^6.1.15",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/react": "^6.1.15",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-macros": "^3.0.1",
+    "classnames": "^2.2.6",
+    "css-loader": "^5.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-is": "^17.0.1",
+    "sass": "^1.32.4",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^2.0.0",
+    "svgr.macro": "^1.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run start:sb",
+    "start:sb": "start-storybook -p 6006",
+    "build:sb": "build-storybook"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^4.3.8",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}

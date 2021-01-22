@@ -1,0 +1,72 @@
+// Configuration for generating css variables and stuff
+//   no-theme: Disables theme specific color generation
+//   theme-override: For setting custom color rather than default generated theme color
+//   static: For disabling interactive colors
+// @property [name: string]: { value: string, no-theme?: bool, theme-override?: { [theme]: string }, static?: bool }
+$_colors: (
+    lime: (
+        value: #86CD74,
+        no-theme: true,
+    ),
+    cactus: (
+        value: #3f573d,
+        no-theme: true,
+    ),
+    red: (
+        value: #FF5552,
+        no-theme: true,
+    ),
+    yellow: (
+        value: #FFBE42,
+        no-theme: true,
+    ),
+    white: (
+        value: #FFFFFF,
+    ),
+    gray: (
+        value: #65676B,
+    ),
+);
+
+// For looping to generate stuff
+$colors: map-keys($_colors);
+
+$_modifiers: (
+    hover: h,
+    active: a,
+);
+// Internal use, for generating the tag itself
+@function _css-var($color, $modifier: null) {
+    $var: --c_#{$color};
+    @if $modifier and map-has-key($_modifiers, $modifier) {
+        $var: $var + '-' + map-get($_modifiers, $modifier);
+    }
+    @return $var;
+}
+
+// Getting css variable based on params
+@function css-color($color, $modifier) {
+    @return var(#{_css-var($color, $modifier)});
+}
+
+// For creating core css color variables
+@mixin init {
+    :root {
+        @each $color, $config in $_colors {
+            $value: map-get($config, value);
+            #{_css-var($color)}: #{$value};
+        }
+    }
+}
+
+// For creating deferred css
+@mixin deferInit { 
+    :root {
+        @each $color, $config in $_colors {
+            $value: map-get($config, value);
+            #{_css-var($color, hover)}: #{darken($value, 4%)};
+            #{_css-var($color, active)}: #{darken($value, 8%)};
+        }
+    }
+}
+

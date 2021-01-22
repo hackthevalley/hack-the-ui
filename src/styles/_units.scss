@@ -1,0 +1,13 @@
+$speeds: (
+    slow: 250ms,
+    normal: 150ms,
+    fast: 100ms,
+);
+
+$ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+$media: (
+    phone: 525px,
+    tablet: 768px,
+    laptop: 1024px,
+);
