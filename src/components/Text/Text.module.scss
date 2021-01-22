@@ -1,7 +1,7 @@
 @use '../../styles/fonts';
 
 .container {
-    @debug fonts.$fonts;
-    font-family: map-get(fonts.$fonts, primary);
-    color: red;
+  @debug fonts.$fonts;
+  font-family: map-get(fonts.$fonts, primary);
+  color: red;
 }

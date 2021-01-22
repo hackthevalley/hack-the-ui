@@ -1,6 +1,6 @@
 @use '../src/styles/colors';
 @use '../src/styles/fonts';
 
-@include fonts.init("../src/assets/fonts/");
+@include fonts.init('../src/assets/fonts/');
 @include colors.init();
 @include colors.deferInit();

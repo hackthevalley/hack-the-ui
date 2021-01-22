@@ -1,8 +1,6 @@
 module.exports = {
-  "stories": [
-    "../src/**/*.stories.mdx",
-  ],
-  "addons": [
+  stories: ['../src/**/*.stories.mdx'],
+  addons: [
     {
       name: '@storybook/preset-scss',
       options: {
@@ -13,7 +11,7 @@ module.exports = {
         },
       },
     },
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
   ],
 };

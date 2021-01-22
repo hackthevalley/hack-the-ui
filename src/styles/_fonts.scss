@@ -2,55 +2,71 @@
 // We would follow a strict filename convention to make this script easier
 // [name].[style].[extension]
 $_config: (
-    // [alias]: { font: string, extensions: string[], weights: string[], fallbacks: string[] }
-    primary: (
-        font: EuclidCircularB,
-        extensions: (woff2 woff ttf eot),
-        weights: (normal bold),
-        fallbacks: (sans-serif),
-    ),
+  // [alias]: { font: string, extensions: string[], weights: string[], fallbacks: string[] }
+  primary:
+    (
+      font: EuclidCircularB,
+      extensions: (
+        woff2 woff ttf eot,
+      ),
+      weights: (
+        normal bold,
+      ),
+      fallbacks: (
+        sans-serif,
+      ),
+    )
 );
 
 // Mapping of file extension to font format for src
 $_formats: (
-    woff2: 'woff2',
-    woff: 'woff',
-    ttf: 'truetype',
-    eot: 'opentype',
+  woff2: 'woff2',
+  woff: 'woff',
+  ttf: 'truetype',
+  eot: 'opentype',
 );
 
 // For referencing
 $fonts: ();
 @each $alias, $config in $_config {
-    $_font: join((map-get($config, font)), map-get($config, fallbacks), $separator: comma);
-    $fonts: map-merge($fonts, ($alias: $_font)) !global;
+  $_font: join(
+    (map-get($config, font)),
+    map-get($config, fallbacks),
+    $separator: comma
+  );
+  $fonts: map-merge(
+    $fonts,
+    (
+      $alias: $_font,
+    )
+  ) !global;
 }
-
 
 // My custom font loader
 // @input string - Basepath for the fonts, very useful for fixing weird import issues
 @mixin init($basepath: '/') {
-    @each $alias, $config in $_config {
-        $font: map-get($config, font);
+  @each $alias, $config in $_config {
+    $font: map-get($config, font);
 
-        // Generate all font-faces
-        @each $weight in map-get($config, weights) {
-            @font-face {
-                font-weight: #{$weight};
-                font-family: #{$font};
-                font-display: swap;
+    // Generate all font-faces
+    @each $weight in map-get($config, weights) {
+      @font-face {
+        font-weight: #{$weight};
+        font-family: #{$font};
+        font-display: swap;
 
-                // Generates src property
-                $src: ();
-                @each $extension in map-get($config, extensions) {
-                    $src: append(
-                        $src,
-                        url(#{$basepath}#{$font}.#{$weight}.#{$extension}) format(map-get($_formats, $extension)),
-                        $separator: comma,
-                    );
-                }
-                src: $src;
-            }
+        // Generates src property
+        $src: ();
+        @each $extension in map-get($config, extensions) {
+          $src: append(
+            $src,
+            url(#{$basepath}#{$font}.#{$weight}.#{$extension})
+              format(map-get($_formats, $extension)),
+            $separator: comma
+          );
         }
+        src: $src;
+      }
     }
+  }
 }
