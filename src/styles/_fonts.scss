@@ -7,10 +7,14 @@ $_config: (
     (
       font: EuclidCircularB,
       extensions: (
-        woff2 woff ttf eot,
+        woff2,
+        woff,
+        ttf,
+        eot,
       ),
       weights: (
-        normal bold,
+        normal,
+        bold,
       ),
       fallbacks: (
         sans-serif,

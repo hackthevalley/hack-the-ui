@@ -35,7 +35,7 @@
     "lint": "prettier --write \"**/*.(js|jsx|mdx|scss)\"",
     "start": "npm run start:sb",
     "start:sb": "start-storybook -p 6006",
-    "build:sb": "build-storybook"
+    "build:sb": "build-storybook > output.txt"
   },
   "keywords": [],
   "author": "",
