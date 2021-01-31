@@ -1,0 +1,20 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
+import Card from '.';
+
+<Meta title='Components/Card' component={Card} />
+
+# Card
+
+## Props
+
+<ArgsTable of={Card} />
+
+## Examples
+
+<Canvas>
+  <Story name='test'>
+    <Card>
+      <div style={{ height: '100px' }}></div>
+    </Card>
+  </Story>
+</Canvas>
