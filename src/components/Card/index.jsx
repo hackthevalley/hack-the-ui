@@ -5,7 +5,7 @@ import styles from './Card.module.scss';
 
 export default function Card({
   as: Component = 'div',
-  backgroundColor = '#272532',
+  backgroundColor = 'darkviolet',
   type = 'material',
   className,
   children,
@@ -13,9 +13,13 @@ export default function Card({
 }) {
   return (
     <Component
-      className={classNames(styles.container, className, styles[type])}
+      className={classNames(
+        styles.container,
+        className,
+        styles[type],
+        styles[`container--color-${backgroundColor}`],
+      )}
       {...props}
-      style={{ backgroundColor }}
     >
       {children}
     </Component>
