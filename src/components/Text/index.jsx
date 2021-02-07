@@ -54,7 +54,7 @@ Text.propTypes = {
   color: PropTypes.string,
   weight: PropTypes.oneOf([`normal`, `bold`]),
   align: PropTypes.oneOf([`start`, `center`, `end`]),
-  transform: PropTypes.oneOf([`none`, `capitalize`, `uppercase`, `lowercase`]),
+  transform: PropTypes.oneOf([`unset`, `capitalize`, `uppercase`, `lowercase`]),
   className: ClassNamesPropType,
   children: PropTypes.node,
 };

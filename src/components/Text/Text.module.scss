@@ -63,7 +63,7 @@ $_config: (
   }
 
   &--transform {
-    @each $type in (none capitalize uppercase lowercase) {
+    @each $type in (unset capitalize uppercase lowercase) {
       &-#{$type} {
         text-transform: $type;
       }
