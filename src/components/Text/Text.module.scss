@@ -1,3 +1,4 @@
+@use '../../styles/colors';
 @use '../../styles/fonts';
 
 $_config: (
@@ -46,9 +47,9 @@ $_config: (
   }
 
   &--color {
-    @each $type in map-keys(colors.$colors) {
-      &-#{$type} {
-        color: var(--color-#{$type});
+    @each $color in colors.$colors {
+      &--color-#{'' + $color} {
+        color: var(--c_#{$color});
       }
     }
   }
