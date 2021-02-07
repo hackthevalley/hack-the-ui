@@ -1,6 +1,71 @@
 @use '../../styles/fonts';
 
-.container {
-  font-family: map-get(fonts.$fonts, primary);
-  color: red;
+$_config: (
+  heading1: (
+    font-size: 3rem,
+    line-height: 1.2,
+  ),
+  heading2: (
+    font-size: 1.25rem,
+    line-height: 1.2,
+  ),
+  body1: (
+    font-size: 1rem,
+    line-height: 1.8,
+  ),
+  body2: (
+    font-size: 1rem,
+    line-heigh: 1.8,
+  ),
+  meta1: (
+    font-size: 0.85rem,
+    line-height: 1.8,
+  ),
+);
+
+.text {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+
+  &--type {
+    @each $type, $attrs in $_config {
+      &-#{$type} {
+        @each $t, $v in $attrs {
+          #{$t}: #{$v};
+        }
+      }
+    }
+  }
+
+  &--weight {
+    @each $type in (normal bold) {
+      &-#{$type} {
+        font-weight: $type;
+      }
+    }
+  }
+
+  &--color {
+    @each $type in map-keys(colors.$colors) {
+      &-#{$type} {
+        color: var(--color-#{$type});
+      }
+    }
+  }
+
+  &--align {
+    @each $type in (start center end) {
+      &-#{$type} {
+        text-align: $type;
+      }
+    }
+  }
+
+  &--transform {
+    @each $type in (none capitalize uppercase lowercase) {
+      &-#{$type} {
+        text-transform: $type;
+      }
+    }
+  }
 }
