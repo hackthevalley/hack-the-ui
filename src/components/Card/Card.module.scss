@@ -1,0 +1,17 @@
+@use '../../styles/units';
+@use '../../styles/colors';
+
+.container {
+  border-radius: units.$border-radius;
+
+  // Generate all background colors
+  @each $color in colors.$colors {
+    &--color-#{'' + $color} {
+      background-color: var(--c_#{$color});
+    }
+  }
+}
+
+.material {
+  box-shadow: 0 0 2rem 0.5rem rgba(0, 0, 0, 0.2);
+}

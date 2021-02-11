@@ -1,0 +1,46 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
+import Card from '.';
+
+<Meta title='Components/Card' component={Card} />
+
+# Card
+
+## Props
+
+<ArgsTable of={Card} />
+
+## Examples
+
+### Default (No Props)
+
+<Canvas>
+  <Story name='Default'>
+    <Card style={{ height: '100px' }}></Card>
+  </Story>
+</Canvas>
+
+### Different `backgroundColor`
+
+<Canvas>
+  <Story name='Different Background Color'>
+    <Card backgroundColor='lime' style={{ height: '100px' }}></Card>
+  </Story>
+</Canvas>
+
+### Different `type`
+
+<Canvas>
+  <Story name='Different Type'>
+    <Card type='flat' style={{ height: '100px' }}></Card>
+  </Story>
+</Canvas>
+
+### Different `as` and `children`
+
+<Canvas>
+  <Story name='Different As and Children'>
+    <Card as='button' style={{ height: '100px', color: 'white' }}>
+      This is a button now
+    </Card>
+  </Story>
+</Canvas>
