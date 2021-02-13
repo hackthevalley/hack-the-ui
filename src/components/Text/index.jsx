@@ -26,10 +26,12 @@ const config = {
   },
 };
 
+console.log(styles);
+
 export default function Text(props) {
   props = Object.assign({ as: `p` }, config[props.type ?? `body1`], props);
 
-  const Component = props.tag;
+  const Component = props.as;
   return (
     <Component
       className={classNames(
