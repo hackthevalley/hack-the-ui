@@ -26,8 +26,6 @@ const config = {
   },
 };
 
-console.log(styles);
-
 export default function Text(props) {
   props = Object.assign({ as: `p` }, config[props.type ?? `body1`], props);
 
