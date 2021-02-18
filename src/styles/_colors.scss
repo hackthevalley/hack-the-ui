@@ -4,29 +4,29 @@
 //   static: For disabling interactive colors
 // @property [name: string]: { value: string, no-theme?: bool, theme-override?: { [theme]: string }, static?: bool }
 $_colors: (
-  lime: (
+  'lime': (
     value: #86cd74,
     no-theme: true,
   ),
-  cactus: (
+  'cactus': (
     value: #3f573d,
     no-theme: true,
   ),
-  red: (
+  'red': (
     value: #ff5552,
     no-theme: true,
   ),
-  yellow: (
+  'yellow': (
     value: #ffbe42,
     no-theme: true,
   ),
-  white: (
+  'white': (
     value: #ffffff,
   ),
-  gray: (
+  'gray': (
     value: #65676b,
   ),
-  darkviolet: (
+  'darkviolet': (
     value: #272532,
   ),
 );

@@ -1,14 +1,13 @@
 {
-  "name": "@htv/hackhack-the-ui",
+  "name": "@htv/hack-the-ui",
   "version": "1.0.0",
-  "description": "",
+  "sideEffects": false,
   "peerDependencies": {
     "babel-plugin-macros": "^3.0.1",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
-    "sass": "^1.32.4",
-    "svgr.macro": "^1.0.4"
+    "sass": "^1.32.4"
   },
   "dependencies": {
     "@babel/core": "^7.12.10",
@@ -18,11 +17,11 @@
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.1.15",
     "babel-loader": "^8.2.2",
+    "babel-plugin-dev-expression": "^0.2.2",
     "babel-plugin-macros": "^3.0.1",
     "classnames": "^2.2.6",
     "css-loader": "^5.0.1",
     "prop-types": "^15.7.2",
-    "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-is": "^17.0.1",
     "sass": "^1.32.4",
@@ -31,11 +30,11 @@
     "svgr.macro": "^1.0.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "prettier --write \"**/*.(js|jsx|mdx|scss)\"",
     "start": "npm run start:sb",
+    "build": "rm -rf ./dist && cp -r ./src ./dist && cp ./package.json ./dist",
     "start:sb": "start-storybook -p 6006",
-    "build:sb": "build-storybook > output.txt"
+    "build:sb": "build-storybook > output.txt",
+    "lint": "prettier --write \"**/*.(js|jsx|mdx|scss)\""
   },
   "keywords": [],
   "author": "",
@@ -49,5 +48,15 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackthevalley/hack-the-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hackthevalley/hack-the-ui/issues"
+  },
+  "homepage": "https://github.com/hackthevalley/hack-the-ui#readme",
+  "description": ""
 }

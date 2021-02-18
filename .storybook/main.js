@@ -1,5 +1,9 @@
 module.exports = {
   stories: ['../src/**/*.stories.mdx'],
+  babel: async (options) => ({
+    ...options,
+    plugins: [...options.plugins, `babel-plugin-dev-expression`],
+  }),
   addons: [
     {
       name: '@storybook/preset-scss',

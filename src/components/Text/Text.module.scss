@@ -1,6 +1,69 @@
+@use '../../styles/colors';
 @use '../../styles/fonts';
+
+$_config: (
+  heading1: (
+    font-size: 5rem,
+  ),
+  heading2: (
+    font-size: 3rem,
+  ),
+  body1: (
+    font-size: 1rem,
+  ),
+  body2: (
+    font-size: 0.9rem,
+  ),
+  meta1: (
+    font-size: 0.85rem,
+  ),
+);
+
+$_spacing: (
+  normal: 1,
+  spaced: 1.3,
+  relaxed: 1.5,
+);
 
 .container {
   font-family: map-get(fonts.$fonts, primary);
-  color: red;
+  margin: 0;
+
+  @each $tag, $config in $_config {
+    &--type-#{$tag} {
+      @each $key, $value in $config {
+        #{$key}: $value;
+      }
+    }
+  }
+
+  @each $tag, $spacing in $_spacing {
+    &--line-height-#{$tag} {
+      line-height: $spacing;
+    }
+  }
+
+  @each $color, $_ in colors.$colors {
+    &--color-#{$color} {
+      color: var(--c_#{$color});
+    }
+  }
+
+  @each $tag in (none uppercase lowercase capitalize) {
+    &--transform-#{$tag} {
+      text-transform: $tag;
+    }
+  }
+
+  @each $tag in (start center end) {
+    &--align-#{$tag} {
+      text-align: $tag;
+    }
+  }
+
+  @each $tag in (normal bold) {
+    &--weight-#{$tag} {
+      font-weight: $tag;
+    }
+  }
 }

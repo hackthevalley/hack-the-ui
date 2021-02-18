@@ -4,8 +4,8 @@ import { ClassNamesPropType } from '../../utils/proptypes';
 import styles from './Card.module.scss';
 
 export default function Card({
-  as: Component = 'div',
   backgroundColor = 'darkviolet',
+  as: Component = 'div',
   type = 'material',
   className,
   children,
@@ -14,10 +14,10 @@ export default function Card({
   return (
     <Component
       className={classNames(
+        styles[`container--color-${backgroundColor}`],
+        styles[`container--type-${type}`],
         styles.container,
         className,
-        styles[type],
-        styles[`container--color-${backgroundColor}`],
       )}
       {...props}
     >

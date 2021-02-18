@@ -1,0 +1,36 @@
+@use '../../styles/colors';
+@use '../../styles/units';
+
+.container {
+  padding: 0 units.$section-padding;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+  display: flex;
+
+  @each $color, $_ in colors.$colors {
+    &--color-#{$color} {
+      background-color: var(--c_#{$color});
+    }
+  }
+
+  &--type {
+    &-full {
+      padding: 0;
+    }
+  }
+}
+
+.content {
+  z-index: 20;
+  width: 100%;
+
+  &--type {
+    &-default {
+      max-width: units.$section-width;
+    }
+    &-full {
+      max-width: unset;
+    }
+  }
+}

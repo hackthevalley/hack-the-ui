@@ -24,6 +24,7 @@ import Card from '.';
 <Canvas>
   <Story name='Different Background Color'>
     <Card backgroundColor='lime' style={{ height: '100px' }}></Card>
+    <Card backgroundColor='red' style={{ height: '100px' }}></Card>
   </Story>
 </Canvas>
 
@@ -31,16 +32,15 @@ import Card from '.';
 
 <Canvas>
   <Story name='Different Type'>
-    <Card type='flat' style={{ height: '100px' }}></Card>
-  </Story>
-</Canvas>
-
-### Different `as` and `children`
-
-<Canvas>
-  <Story name='Different As and Children'>
-    <Card as='button' style={{ height: '100px', color: 'white' }}>
-      This is a button now
-    </Card>
+    <Card
+      type='material'
+      backgroundColor='red'
+      style={{ height: '100px' }}
+    ></Card>
+    <Card
+      type='flat'
+      backgroundColor='yellow'
+      style={{ height: '100px', marginTop: `4rem` }}
+    ></Card>
   </Story>
 </Canvas>

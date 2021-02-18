@@ -11,8 +11,106 @@ import Text from '.';
 
 ## Examples
 
+### Text Types
+
 <Canvas>
-  <Story name='test'>
-    <Text>owo</Text>
+  <Story name='Text Types'>
+    <Text color='gray' type='heading1'>
+      Heading 1
+    </Text>
+    <Text color='gray' type='heading2'>
+      Heading 2
+    </Text>
+    <Text color='gray' type='body1'>
+      Body 1
+    </Text>
+    <Text color='gray' type='body2'>
+      Body 2
+    </Text>
+    <Text color='gray' type='meta1'>
+      Meta 1
+    </Text>
+  </Story>
+</Canvas>
+
+### Alignment
+
+<Canvas>
+  <Story name='Text Alignment'>
+    <Text color='gray' type='body1' align='start'>
+      Start
+    </Text>
+    <Text color='gray' type='body1' align='center'>
+      Center
+    </Text>
+    <Text color='gray' type='body1' align='end'>
+      End
+    </Text>
+  </Story>
+</Canvas>
+
+### Transform
+
+<Canvas>
+  <Story name='Text Transform'>
+    <Text color='gray' type='body1' transform='uppercase'>
+      uppercase
+    </Text>
+    <Text color='gray' type='body1' transform='lowercase'>
+      LOWERCASE
+    </Text>
+    <Text color='gray' type='body1' transform='capitalize'>
+      captialize
+    </Text>
+    <Text color='gray' type='body1' transform='capitalize'>
+      <Text color='gray' type='body1' transform='none'>
+        none
+      </Text>
+    </Text>
+  </Story>
+</Canvas>
+
+### Weight
+
+<Canvas>
+  <Story name='Text Weight'>
+    <Text color='gray' type='body1' as='h6' weight='normal'>
+      Normal
+    </Text>
+    <Text color='gray' type='body1' weight='bold'>
+      Bold
+    </Text>
+  </Story>
+</Canvas>
+
+### Colors
+
+<Canvas>
+  <Story name='Text Colors'>
+    <Text color='gray' type='body1'>
+      Gray
+    </Text>
+    <Text color='red' type='body1'>
+      Red
+    </Text>
+    <Text color='lime' type='body1'>
+      Cactus
+    </Text>
+  </Story>
+</Canvas>
+
+### Line Height
+
+<Canvas>
+  <Story name='Text Line Height'>
+    <Text color='gray' type='heading1' lineHeight='normal'>
+      Normal
+    </Text>
+    <Text color='gray' type='heading1' lineHeight='spaced'>
+      Spaced
+    </Text>
+    <Text color='gray' type='heading1' lineHeight='relaxed'>
+      Relaxed
+    </Text>
   </Story>
 </Canvas>

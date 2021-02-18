@@ -1,0 +1,63 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
+import Text from '../Text';
+import Section from '.';
+
+<Meta title='Components/Section' component={Section} />
+
+# Section
+
+## Props
+
+<ArgsTable of={Section} />
+
+## Examples
+
+## Type
+
+<Canvas>
+  <Story name='Section Types'>
+    <Section>
+      <Text color='gray' type='body1'>
+        Default section
+      </Text>
+    </Section>
+    <Section type='full'>
+      <Text color='gray' type='body1'>
+        Full width section
+      </Text>
+    </Section>
+  </Story>
+</Canvas>
+
+## Background color
+
+<Canvas>
+  <Story name='Section Background Colors'>
+    <Section backgroundColor='gray'>
+      <Text type='body1'>Gray background</Text>
+    </Section>
+    <Section backgroundColor='red'>
+      <Text type='body1'>Red background</Text>
+    </Section>
+  </Story>
+</Canvas>
+
+## Atmosphere
+
+<Story name='Section Atmosphere'>
+  <Section
+    atmosphere={
+      <Text
+        style={{ position: `absolute`, marginTop: `3px` }}
+        color='red'
+        type='body1'
+      >
+        Atmosphere
+      </Text>
+    }
+  >
+    <Text align='center' color='gray' type='body1'>
+      Content
+    </Text>
+  </Section>
+</Story>
