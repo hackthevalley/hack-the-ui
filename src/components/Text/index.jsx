@@ -42,22 +42,25 @@ export default function Text({ className, children, type, ..._props }) {
     }
   }
 
-  const { as: Component, ...props } = Object.assign(
-    { as: `p` },
-    config[type] ?? {},
-    _props,
-  );
+  const {
+    as: Component,
+    lineHeight,
+    transform,
+    weight,
+    align,
+    color,
+    ...props
+  } = Object.assign({ as: `p` }, config[type] ?? {}, _props);
 
   return (
     <Component
       {...props}
       className={classNames(
-        props.lineHeight &&
-          styles[`container--line-height-${props.lineHeight}`],
-        props.transform && styles[`container--transform-${props.transform}`],
-        props.weight && styles[`container--weight-${props.weight}`],
-        props.align && styles[`container--align-${props.align}`],
-        props.color && styles[`container--color-${props.color}`],
+        lineHeight && styles[`container--line-height-${lineHeight}`],
+        transform && styles[`container--transform-${transform}`],
+        weight && styles[`container--weight-${weight}`],
+        align && styles[`container--align-${align}`],
+        color && styles[`container--color-${color}`],
         styles[`container--type-${type}`],
         styles.container,
         className,
