@@ -33,11 +33,7 @@ const config = {
 
 export default function Text({ className, children, type, ..._props }) {
   if (__DEV__) {
-    if (!type) {
-      throw new Error(`Please provide a text type`);
-    }
-
-    if (!config[type]) {
+    if (type && !config[type]) {
       throw new Error(`${type} is not a valid text type`);
     }
   }
