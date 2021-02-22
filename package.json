@@ -1,6 +1,6 @@
 {
   "name": "@htv/ui-kit",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "sideEffects": false,
   "peerDependencies": {
     "babel-plugin-macros": "^3.0.1",
