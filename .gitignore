@@ -1,4 +1,5 @@
 storybook-static
 node_modules
 dist
+.storybook/*.css*
 *.tgz

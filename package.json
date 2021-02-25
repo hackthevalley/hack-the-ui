@@ -16,11 +16,11 @@
     "react": "^17.0.1"
   },
   "scripts": {
-    "start": "npm run start:sb",
+    "start": "sass .storybook/index.scss:.storybook/index.css && npm run start:sb",
     "build": "rm -rf ./dist && rsync -a --exclude '*.stories.mdx' ./src/ ./dist && cp ./package.json ./dist/package.json",
     "deploy": "npm run build && npm publish ./dist",
     "start:sb": "start-storybook -p 6006",
-    "build:sb": "build-storybook --docs",
+    "build:sb": "sass .storybook/index.scss:.storybook/index.css && build-storybook --docs",
     "prepublishOnly": "if ls ./package-lock.json 1> /dev/null 2>&1 ; then echo \"Publish denied. Please publish from ./dist instead\n\" && exit 1 ; else exit 0 ; fi",
     "lint": "prettier --write \"**/*.(js|jsx|mdx|scss)\""
   },
