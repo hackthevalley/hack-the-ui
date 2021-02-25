@@ -8,12 +8,17 @@
   @each $color, $_ in colors.$colors {
     &--color-#{$color} {
       background-color: #{colors.css-color($color)};
+      --c: var(#{colors.css-var($color)});
     }
   }
 
   &--type {
     &-material {
-      box-shadow: 0 0 2rem 0.5rem rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 2rem 1rem #{colors.css-color(
+          --c,
+          $opacity: 0.2,
+          $raw: true
+        )};
     }
   }
 }
