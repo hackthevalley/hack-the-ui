@@ -19,7 +19,7 @@
 
 // Generates transition declaration based on theme and with media queries
 // @input: String | { prop: string, speed?: oneOf(units.$speed), delay?: string }
-@mixin transition($args, $speed: normal, $delay: 0) {
+@mixin transition($args, $speed: normal, $delay: 0s) {
   // Normalize input
   @if type-of($args) != list {
     $args: ($args);
@@ -28,11 +28,11 @@
   // Generate transition properties
   $res: ();
   @each $arg in $args {
-    $res: append($res, _transition($arg, $speed, $delay));
+    $res: append($res, _transition($arg, $speed, $delay), $separator: comma);
   }
 
   // Return transition
-  @media (prefers-reduced-mition: no-prefence) {
+  @media (prefers-reduced-motion: no-preference) {
     :global(.animate) & {
       transition: $res;
     }

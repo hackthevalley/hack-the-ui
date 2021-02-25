@@ -1,0 +1,103 @@
+@use '../../styles/mixins';
+@use '../../styles/colors';
+@use '../../styles/units';
+
+.button {
+  @include mixins.transition(background-color border-color color);
+  padding: units.$input-padding units.$input-padding * 2;
+  border-radius: units.$border-radius;
+  justify-content: center;
+  display: inline-flex;
+  border-style: solid;
+  align-items: center;
+  border-width: 2px;
+  cursor: pointer;
+
+  @each $tag, $_ in colors.$colors {
+    &--color-#{$tag} {
+      --c: var(#{colors.css-var($tag)});
+      --c-h: var(#{colors.css-var($tag, hover)});
+      --c-a: var(#{colors.css-var($tag, active)});
+    }
+  }
+
+  &--type {
+    &-solid {
+      background-color: colors.css-color(--c, $raw: true);
+      border-color: colors.css-color(--c, $raw: true);
+
+      &:not(:disabled) {
+        &:hover,
+        &:focus {
+          background-color: colors.css-color(--c-h, $raw: true);
+          border-color: colors.css-color(--c-h, $raw: true);
+        }
+
+        &:active {
+          background-color: colors.css-color(--c-a, $raw: true);
+          border-color: colors.css-color(--c-a, $raw: true);
+        }
+      }
+    }
+
+    &-outline {
+      background-color: transparent;
+      border-color: colors.css-color(--c, $raw: true);
+      color: colors.css-color(--c, $raw: true);
+
+      &:not(:disabled) {
+        &:hover,
+        &:focus {
+          background-color: colors.css-color(--c-h, $raw: true);
+          border-color: colors.css-color(--c-h, $raw: true);
+          color: colors.css-color(white);
+        }
+
+        &:active {
+          background-color: colors.css-color(--c-a, $raw: true);
+          border-color: colors.css-color(--c-a, $raw: true);
+        }
+      }
+    }
+
+    // woooo spooky
+    &-ghost {
+      background-color: transparent;
+      border-color: transparent;
+      color: colors.css-color(--c, $raw: true);
+
+      &:not(:disabled) {
+        &:hover,
+        &:focus {
+          background-color: colors.css-color(--c, $raw: true, $opacity: 0.1);
+        }
+
+        &:active {
+          background-color: colors.css-color(--c, $raw: true, $opacity: 0.15);
+        }
+      }
+    }
+  }
+
+  &:disabled {
+    --c: var(#{colors.css-var(disabled)});
+    cursor: not-allowed;
+  }
+
+  // TODO: When the time comes owo
+  &--loading {
+  }
+}
+
+.icon {
+  display: flex;
+  font-size: 80%;
+
+  &--left {
+    margin-right: units.$input-padding;
+  }
+
+  &--right {
+    margin-left: units.$input-padding;
+  }
+}

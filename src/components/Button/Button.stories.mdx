@@ -1,0 +1,117 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
+import { FaRocket } from 'react-icons/fa';
+import Button from '.';
+
+<Meta title='Components/Button' component={Button} />
+
+# Button
+
+## Props
+
+<ArgsTable of={Button} />
+
+## Examples
+
+### Type
+
+<Canvas>
+  <Story name='Button Types'>
+    <Button onClick={() => console.log('owo')} style={{ outline: `none` }}>
+      Register for HTV
+    </Button>
+    <span style={{ margin: 10 }} />
+    <Button
+      type='outline'
+      onClick={() => console.log('owo')}
+      style={{ outline: `none` }}
+    >
+      Register for HTV
+    </Button>
+    <span style={{ margin: 10 }} />
+    <Button
+      type='ghost'
+      onClick={() => console.log('owo')}
+      style={{ outline: `none` }}
+    >
+      Register for HTV
+    </Button>
+  </Story>
+</Canvas>
+
+### Icons
+
+<Canvas>
+  <Story name='Button Icons'>
+    <Button
+      leftIcon={FaRocket}
+      rightIcon={FaRocket}
+      style={{ outline: `none` }}
+    >
+      Register for HTV
+    </Button>
+    <span style={{ margin: 10 }} />
+    <Button
+      type='outline'
+      leftIcon={FaRocket}
+      rightIcon={FaRocket}
+      style={{ outline: `none` }}
+    >
+      Register for HTV
+    </Button>
+    <span style={{ margin: 10 }} />
+    <Button
+      type='ghost'
+      leftIcon={FaRocket}
+      rightIcon={FaRocket}
+      style={{ outline: `none` }}
+    >
+      Register for HTV
+    </Button>
+  </Story>
+</Canvas>
+
+### Colors
+
+<Canvas>
+  <Story name='Button Colors'>
+    <Button color='red' style={{ outline: `none` }}>
+      Register for HTV
+    </Button>
+    <span style={{ margin: 10 }} />
+    <Button type='outline' color='darkviolet' style={{ outline: `none` }}>
+      Register for HTV
+    </Button>
+    <span style={{ margin: 10 }} />
+    <Button
+      type='ghost'
+      leftIcon={FaRocket}
+      color='yellow'
+      style={{ outline: `none` }}
+    >
+      Register for HTV
+    </Button>
+  </Story>
+</Canvas>
+
+### Disabled
+
+<Canvas>
+  <Story name='Button Disabled'>
+    <Button disabled style={{ outline: `none` }}>
+      Register for HTV
+    </Button>
+    <span style={{ margin: 10 }} />
+    <Button type='outline' disabled style={{ outline: `none` }}>
+      Register for HTV
+    </Button>
+    <span style={{ margin: 10 }} />
+    <Button
+      type='ghost'
+      leftIcon={FaRocket}
+      disabled
+      style={{ outline: `none` }}
+    >
+      Register for HTV
+    </Button>
+  </Story>
+</Canvas>

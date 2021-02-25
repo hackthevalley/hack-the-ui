@@ -10,7 +10,7 @@
 
   @each $color, $_ in colors.$colors {
     &--color-#{$color} {
-      background-color: var(--c_#{$color});
+      background-color: colors.css-color($color);
     }
   }
 

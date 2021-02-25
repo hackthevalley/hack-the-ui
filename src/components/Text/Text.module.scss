@@ -45,7 +45,7 @@ $_spacing: (
 
   @each $color, $_ in colors.$colors {
     &--color-#{$color} {
-      color: var(--c_#{$color});
+      color: colors.css-color($color);
     }
   }
 

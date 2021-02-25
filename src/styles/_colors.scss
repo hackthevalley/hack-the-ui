@@ -20,6 +20,11 @@ $_colors: (
     value: #ffbe42,
     no-theme: true,
   ),
+  'disabled': (
+    value: #cacaca,
+    no-action: true,
+    no-theme: true,
+  ),
   'white': (
     value: #ffffff,
   ),
@@ -41,8 +46,8 @@ $_modifiers: (
   hover: h,
   active: a,
 );
-// Internal use, for generating the tag itself
-@function _css-var($color, $modifier: null) {
+// For generating the tag itself
+@function css-var($color, $modifier: null) {
   $var: --c_#{$color};
   @if $modifier and map-has-key($_modifiers, $modifier) {
     $var: $var + '-' + map-get($_modifiers, $modifier);
@@ -50,9 +55,18 @@ $_modifiers: (
   @return $var;
 }
 
+// Convert hex to raw
+@function _hex-to-raw($color) {
+  @return #{red($color)}, #{green($color)}, #{blue($color)};
+}
+
 // Getting css variable based on params
-@function css-color($color, $modifier) {
-  @return var(#{_css-var($color, $modifier)});
+@function css-color($color, $modifier: null, $opacity: 1, $raw: false) {
+  @if $raw {
+    @return rgba(var(#{$color}), $opacity);
+  } @else {
+    @return rgba(var(#{css-var($color, $modifier)}), $opacity);
+  }
 }
 
 // For creating core css color variables
@@ -60,7 +74,7 @@ $_modifiers: (
   :root {
     @each $color, $config in $_colors {
       $value: map-get($config, value);
-      #{_css-var($color)}: #{$value};
+      #{css-var($color)}: _hex-to-raw($value);
     }
   }
 }
@@ -69,9 +83,11 @@ $_modifiers: (
 @mixin deferInit {
   :root {
     @each $color, $config in $_colors {
-      $value: map-get($config, value);
-      #{_css-var($color, hover)}: #{darken($value, 4%)};
-      #{_css-var($color, active)}: #{darken($value, 8%)};
+      @if not map-get($config, no-action) {
+        $value: map-get($config, value);
+        #{css-var($color, hover)}: _hex-to-raw(darken($value, 6%));
+        #{css-var($color, active)}: _hex-to-raw(darken($value, 10%));
+      }
     }
   }
 }
