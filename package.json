@@ -9,6 +9,7 @@
     "react": "^17.0.0",
     "sass": "^1.32.4"
   },
+  "babelMacros": {},
   "dependencies": {
     "babel-plugin-dev-expression": "^0.2.2",
     "classnames": "^2.2.6",
@@ -16,12 +17,13 @@
     "react": "^17.0.1"
   },
   "scripts": {
-    "start": "sass .storybook/index.scss:.storybook/index.css && npm run start:sb",
+    "start": "npm run build:sass && npm run start:sb",
     "build": "rm -rf ./dist && rsync -a --exclude '*.stories.mdx' ./src/ ./dist && cp ./package.json ./dist/package.json",
     "deploy": "npm run build && npm publish ./dist",
     "start:sb": "start-storybook -p 6006",
-    "build:sb": "sass .storybook/index.scss:.storybook/index.css && build-storybook --docs",
+    "build:sb": "npm run build:sass && build-storybook --docs",
     "prepublishOnly": "if ls ./package-lock.json 1> /dev/null 2>&1 ; then echo \"Publish denied. Please publish from ./dist instead\n\" && exit 1 ; else exit 0 ; fi",
+    "build:sass": "sass .storybook:.storybook",
     "lint": "prettier --write \"**/*.(js|jsx|mdx|scss)\""
   },
   "keywords": [],

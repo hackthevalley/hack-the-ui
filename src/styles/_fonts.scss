@@ -19,7 +19,22 @@ $_config: (
       fallbacks: (
         sans-serif,
       ),
-    )
+    ),
+  secondary: (
+    font: EuclidCircularB,
+    extensions: (
+      woff2,
+      woff,
+      ttf,
+      eot,
+    ),
+    weights: (
+      bold,
+    ),
+    fallbacks: (
+      sans-serif,
+    ),
+  )
 );
 
 // Mapping of file extension to font format for src

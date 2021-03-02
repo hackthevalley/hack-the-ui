@@ -1,0 +1,39 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title='Docs/Home' />
+
+# Hack The Valley UI Kit
+
+React UI Library used across multiple applications for uniform styling and consistent code.
+
+## Install
+
+<br />
+
+### Production
+
+```
+npm install @htv/ui-kit
+```
+
+> Note that the library is pre-compiled, hence you would have to include it in your
+> webpack config for rules involving `.scss` and `.js`. Other dependencies (other
+> than the obvious `sass` and `react`) involved are `classnames`, `prop-types`,
+> `babel-plugin-dev-expression`. (Refer to the peer-dependencies)
+
+> This is also built following React 17, hence your jsx babel preset/plugin needs to
+> be using `runtime: "automatic"` for this to work.
+
+### Development
+
+1. `git clone git+https://github.com/hackthevalley/hack-the-ui.git`
+2. `npm ci # For install if thats what you're into`
+3. `npm start`
+
+> Perhaps in the future we can look into something similar to electron with a two
+> package.json setup to help with better package filtered (npm needs to step up >:c)
+
+### Contributing
+
+- Have a problem? [Create an issue](https://github.com/hackthevalley/hack-the-ui/issues/new)
+- Want something added? Want to share your work? Or just have question? [Start a discussion](https://github.com/hackthevalley/hack-the-ui/discussions)

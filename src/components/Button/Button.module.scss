@@ -1,10 +1,12 @@
 @use '../../styles/mixins';
 @use '../../styles/colors';
 @use '../../styles/units';
+@use '../../styles/fonts';
 
 .button {
   @include mixins.transition(background-color border-color color);
   padding: units.$input-padding units.$input-padding * 2;
+  font-family: map-get(fonts.$fonts, secondary);
   border-radius: units.$border-radius;
   justify-content: center;
   display: inline-flex;

@@ -3,18 +3,23 @@
 
 $_config: (
   heading1: (
+    font-family: map-get(fonts.$fonts, secondary),
     font-size: 4.5rem,
   ),
   heading2: (
+    font-family: map-get(fonts.$fonts, primary),
     font-size: 2rem,
   ),
   body1: (
+    font-family: map-get(fonts.$fonts, primary),
     font-size: 1rem,
   ),
   body2: (
+    font-family: map-get(fonts.$fonts, primary),
     font-size: 0.9rem,
   ),
   meta1: (
+    font-family: map-get(fonts.$fonts, secondary),
     font-size: 0.85rem,
   ),
 );
@@ -26,7 +31,6 @@ $_spacing: (
 );
 
 .container {
-  font-family: map-get(fonts.$fonts, primary);
   margin: 0;
 
   @each $tag, $config in $_config {
