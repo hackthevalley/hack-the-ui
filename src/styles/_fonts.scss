@@ -5,12 +5,11 @@ $_config: (
   // [alias]: { font: string, extensions: string[], weights: string[], fallbacks: string[] }
   primary:
     (
-      font: SourceSansPro,
+      font: SourceCodePro,
       extensions: (
         woff2,
         woff,
         ttf,
-        eot,
       ),
       weights: (
         normal,
