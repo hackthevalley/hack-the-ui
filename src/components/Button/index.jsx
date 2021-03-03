@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { ClassNamesPropType } from '../../utils/proptypes';
+import cap from '../../utils/cap';
 import Text from '../Text';
-import styles from './Button.module.scss';
+import * as styles from './Button.module.scss';
 
 export default function Button({
   rightIcon: RightIcon,
@@ -18,8 +19,8 @@ export default function Button({
     <Text
       {...props}
       className={classNames(
-        styles[`button--color-${color}`],
-        styles[`button--type-${type}`],
+        styles[`buttonColor${cap(color)}`],
+        styles[`buttonType${cap(type)}`],
         styles.button,
         className,
       )}
@@ -30,13 +31,13 @@ export default function Button({
       as={as}
     >
       {LeftIcon && (
-        <span className={classNames(styles[`icon--left`], styles.icon)}>
+        <span className={classNames(styles[`iconLeft`], styles.icon)}>
           <LeftIcon />
         </span>
       )}
       <span>{children}</span>
       {RightIcon && (
-        <span className={classNames(styles[`icon--right`], styles.icon)}>
+        <span className={classNames(styles[`iconRight`], styles.icon)}>
           <RightIcon />
         </span>
       )}

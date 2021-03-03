@@ -8,9 +8,15 @@ module.exports = {
     {
       name: `@storybook/preset-scss`,
       options: {
+        styleLoaderOptions: {
+          modules: {
+            namedExport: true,
+          },
+        },
         cssLoaderOptions: {
           modules: {
             localIdentName: `[name]__[local]--[hash:base64:5]`,
+            namedExport: true,
           },
         },
       },

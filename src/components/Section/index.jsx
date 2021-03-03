@@ -1,7 +1,8 @@
 import classNames from 'classnames';
 import propTypes from 'prop-types';
 import { ClassNamesPropType } from '../../utils/proptypes';
-import styles from './Section.module.scss';
+import cap from '../../utils/cap';
+import * as styles from './Section.module.scss';
 
 export default function Section({
   as: Component = `section`,
@@ -15,15 +16,15 @@ export default function Section({
   return (
     <Component
       className={classNames(
-        backgroundColor && styles[`container--color-${backgroundColor}`],
-        styles[`container--type-${type}`],
+        backgroundColor && styles[`containerColor${cap(backgroundColor)}`],
+        styles[`containerType${cap(type)}`],
         styles.container,
       )}
     >
       <div
         {...props}
         className={classNames(
-          styles[`content--type-${type}`],
+          styles[`contentType${cap(type)}`],
           styles.content,
           className,
         )}

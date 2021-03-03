@@ -1,7 +1,8 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { ClassNamesPropType } from '../../utils/proptypes';
-import styles from './Text.module.scss';
+import cap from '../../utils/cap';
+import * as styles from './Text.module.scss';
 
 const config = {
   heading1: {
@@ -58,13 +59,13 @@ export default function Text({ className, children, type, ..._props }) {
     <Component
       {...props}
       className={classNames(
-        lineHeight && styles[`container--line-height-${lineHeight}`],
-        transform && styles[`container--transform-${transform}`],
-        weight && styles[`container--weight-${weight}`],
-        align && styles[`container--align-${align}`],
-        color && styles[`container--color-${color}`],
-        font && styles[`container--font-${font}`],
-        styles[`container--type-${type}`],
+        lineHeight && styles[`containerLineHeight${cap(lineHeight)}`],
+        transform && styles[`containerTransform${cap(transform)}`],
+        weight && styles[`containerWeight${cap(weight)}`],
+        align && styles[`containerAlign${cap(align)}`],
+        color && styles[`containerColor${cap(color)}`],
+        font && styles[`containerFont${cap(font)}`],
+        styles[`containerType${cap(type)}`],
         styles.container,
         className,
       )}
