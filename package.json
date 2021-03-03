@@ -30,7 +30,7 @@
   "author": "Hack The Valley",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.13.1",
+    "@babel/core": "^7.13.8",
     "@storybook/addon-actions": "^6.1.20",
     "@storybook/addon-essentials": "^6.1.20",
     "@storybook/addon-links": "^6.1.20",
@@ -38,7 +38,7 @@
     "@storybook/react": "^6.1.20",
     "babel-loader": "^8.2.2",
     "babel-plugin-macros": "^3.0.1",
-    "css-loader": "^5.0.1",
+    "css-loader": "^5.1.1",
     "husky": "^4.3.8",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",

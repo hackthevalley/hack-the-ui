@@ -24,6 +24,7 @@ export default function Button({
         className,
       )}
       lineHeight='normal'
+      font='secondary'
       weight='bold'
       type='body1'
       as={as}

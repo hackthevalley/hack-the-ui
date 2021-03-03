@@ -1,5 +1,5 @@
 import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
-import { FaRocket } from 'react-icons/fa';
+import { FaRocket, FaBars } from 'react-icons/fa';
 import Button from '.';
 
 <Meta title='Components/Button' component={Button} />
@@ -42,18 +42,14 @@ import Button from '.';
 
 <Canvas>
   <Story name='Button Icons'>
-    <Button
-      leftIcon={FaRocket}
-      rightIcon={FaRocket}
-      style={{ outline: `none` }}
-    >
+    <Button leftIcon={FaRocket} rightIcon={FaBars} style={{ outline: `none` }}>
       Register for HTV
     </Button>
     <span style={{ margin: 10 }} />
     <Button
       type='outline'
       leftIcon={FaRocket}
-      rightIcon={FaRocket}
+      rightIcon={FaBars}
       style={{ outline: `none` }}
     >
       Register for HTV
@@ -62,7 +58,7 @@ import Button from '.';
     <Button
       type='ghost'
       leftIcon={FaRocket}
-      rightIcon={FaRocket}
+      rightIcon={FaBars}
       style={{ outline: `none` }}
     >
       Register for HTV

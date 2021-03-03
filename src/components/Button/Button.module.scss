@@ -6,7 +6,6 @@
 .button {
   @include mixins.transition(background-color border-color color);
   padding: units.$input-padding units.$input-padding * 2;
-  font-family: map-get(fonts.$fonts, secondary);
   border-radius: units.$border-radius;
   justify-content: center;
   display: inline-flex;
@@ -94,6 +93,11 @@
 .icon {
   display: flex;
   font-size: 80%;
+  flex-shrink: 0;
+
+  & > * {
+    display: flex;
+  }
 
   &--left {
     margin-right: units.$input-padding;

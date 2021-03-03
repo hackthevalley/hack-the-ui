@@ -3,23 +3,18 @@
 
 $_config: (
   heading1: (
-    font-family: map-get(fonts.$fonts, secondary),
     font-size: 4.5rem,
   ),
   heading2: (
-    font-family: map-get(fonts.$fonts, primary),
     font-size: 1.8rem,
   ),
   body1: (
-    font-family: map-get(fonts.$fonts, primary),
     font-size: 1rem,
   ),
   body2: (
-    font-family: map-get(fonts.$fonts, primary),
     font-size: 0.9rem,
   ),
   meta1: (
-    font-family: map-get(fonts.$fonts, secondary),
     font-size: 0.85rem,
   ),
 );
@@ -38,6 +33,12 @@ $_spacing: (
       @each $key, $value in $config {
         #{$key}: $value;
       }
+    }
+  }
+
+  @each $font, $family in fonts.$fonts {
+    &--font-#{$font} {
+      font-family: $family;
     }
   }
 
