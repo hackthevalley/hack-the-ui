@@ -14,14 +14,14 @@ export default function Section({
   ...props
 }) {
   return (
-    <Component
+    <div
       className={classNames(
         backgroundColor && styles[`containerColor${cap(backgroundColor)}`],
         styles[`containerType${cap(type)}`],
         styles.container,
       )}
     >
-      <div
+      <Component
         {...props}
         className={classNames(
           styles[`contentType${cap(type)}`],
@@ -30,9 +30,9 @@ export default function Section({
         )}
       >
         {children}
-      </div>
+      </Component>
       {atmosphere}
-    </Component>
+    </div>
   );
 }
 
