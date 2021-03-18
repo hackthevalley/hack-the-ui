@@ -44,20 +44,22 @@ import Section from '.';
 
 ## Atmosphere
 
-<Story name='Section Atmosphere'>
-  <Section
-    atmosphere={
-      <Text
-        style={{ position: `absolute`, marginTop: `3px` }}
-        color='red'
-        type='body1'
-      >
-        Atmosphere
+<Canvas>
+  <Story name='Section Atmosphere'>
+    <Section
+      atmosphere={
+        <Text
+          style={{ position: `absolute`, marginTop: `3px` }}
+          color='red'
+          type='body1'
+        >
+          Atmosphere
+        </Text>
+      }
+    >
+      <Text align='center' color='gray' type='body1'>
+        Content
       </Text>
-    }
-  >
-    <Text align='center' color='gray' type='body1'>
-      Content
-    </Text>
-  </Section>
-</Story>
+    </Section>
+  </Story>
+</Canvas>
