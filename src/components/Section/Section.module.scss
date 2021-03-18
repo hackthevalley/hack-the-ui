@@ -6,6 +6,7 @@
   flex-direction: column;
   box-sizing: border-box;
   align-items: center;
+  position: relative;
   display: flex;
 
   @each $color, $_ in colors.$colors {
