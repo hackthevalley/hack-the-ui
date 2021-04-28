@@ -1,6 +1,6 @@
 {
   "name": "@htv/ui-kit",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "sideEffects": false,
   "main": "./index.cjs.js",
   "module": "./index.esm.js",
