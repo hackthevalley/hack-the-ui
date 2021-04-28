@@ -16,7 +16,9 @@ export default {
       format: 'es',
     },
   ],
-  external: ['react'],
+  external: {
+    react: 'React',
+  },
   plugins: [
     peerDepsExternal(),
     postcss({
