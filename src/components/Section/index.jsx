@@ -8,6 +8,7 @@ export default function Section({
   as: Component = `section`,
   type = `default`,
   backgroundColor,
+  rootClassName,
   atmosphere,
   className,
   children,
@@ -19,6 +20,7 @@ export default function Section({
         backgroundColor && styles[`containerColor${cap(backgroundColor)}`],
         styles[`containerType${cap(type)}`],
         styles.container,
+        rootClassName,
       )}
     >
       <Component
@@ -39,6 +41,7 @@ export default function Section({
 Section.propTypes = {
   backgroundColor: propTypes.string,
   atmosphere: propTypes.node,
+  rootClassName: ClassNamesPropType,
   className: ClassNamesPropType,
   children: propTypes.node,
   type: propTypes.oneOf([`default`, `full`]),
